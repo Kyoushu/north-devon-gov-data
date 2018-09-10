@@ -36,6 +36,20 @@ class BinCollection
         return $this->type;
     }
 
+    public function getHumanType(): ?string
+    {
+        switch($this->getType()){
+            case self::TYPE_BLACK_BIN:
+                return 'Black Bin';
+            case self::TYPE_GREEN_BIN:
+                return 'Green Bin';
+            case self::TYPE_RECYCLING;
+                return 'Recycling';
+            default:
+                return null;
+        }
+    }
+
     public function getText(): string
     {
         return $this->text;

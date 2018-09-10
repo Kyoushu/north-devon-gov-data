@@ -1,0 +1,35 @@
+{
+    "name": "kyoushu/north-devon-gov-data",
+    "description": "A library for extracting data from northdevon.gov.uk",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "James Willans",
+            "email": "kyoushu@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "~7.1.0",
+        "ext-dom": "*",
+        "psr/http-message": "^1.0",
+        "php-http/httplug": "^1.1",
+        "symfony/dom-crawler": "^4.1",
+        "guzzlehttp/psr7": "^1.4",
+        "phpunit/phpunit": "^7.3",
+        "symfony/css-selector": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kyoushu\\NorthDevonGovData\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Kyoushu\\NorthDevonGovData\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.1"
+    }
+}

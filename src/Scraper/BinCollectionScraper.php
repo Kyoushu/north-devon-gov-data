@@ -175,8 +175,10 @@ class BinCollectionScraper extends AbstractHtmlScraper
         $elements = $crawler->filter('#main ul')->first()->filter('li');
 
         foreach($elements as $element){
+
             $text = self::getNodeText($element);
             $date = self::extractDate($text, $this->now);
+            $text = self::normalizeDateText($text);
 
             if($date === null) continue;
 

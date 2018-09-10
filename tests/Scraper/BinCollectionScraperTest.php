@@ -121,17 +121,17 @@ class BinCollectionScraperTest extends TestCase
 
         $this->assertInstanceOf(BinCollection::class, $data[0]);
         $this->assertEquals(BinCollection::TYPE_GREEN_BIN, $data[0]->getType());
-        $this->assertEquals('If you’ve registered for garden waste, your next green bin collection will be on Tuesday Sep 11', $data[0]->getText());
+        $this->assertEquals('If you’ve registered for garden waste, your next green bin collection will be on Tuesday 11th September', $data[0]->getText());
         $this->assertEquals('2018-09-11', $data[0]->getDate()->format('Y-m-d'));
 
         $this->assertInstanceOf(BinCollection::class, $data[1]);
         $this->assertEquals(BinCollection::TYPE_RECYCLING, $data[1]->getType());
-        $this->assertEquals('Your next Weekly recycling collection will be Friday Sep 14.', $data[1]->getText());
+        $this->assertEquals('Your next Weekly recycling collection will be Friday 14th September.', $data[1]->getText());
         $this->assertEquals('2018-09-14', $data[1]->getDate()->format('Y-m-d'));
 
         $this->assertInstanceOf(BinCollection::class, $data[2]);
         $this->assertEquals(BinCollection::TYPE_BLACK_BIN, $data[2]->getType());
-        $this->assertEquals('Your next Fortnightly Black Bin/Bag collection will be Tuesday Sep 18.', $data[2]->getText());
+        $this->assertEquals('Your next Fortnightly Black Bin/Bag collection will be Tuesday 18th September.', $data[2]->getText());
         $this->assertEquals('2018-09-18', $data[2]->getDate()->format('Y-m-d'));
     }
 
@@ -163,7 +163,7 @@ class BinCollectionScraperTest extends TestCase
         $this->assertInstanceOf(BinCollection::class, $binCollection);
 
         $this->assertEquals(BinCollection::TYPE_RECYCLING, $binCollection->getType());
-        $this->assertEquals('Your next Weekly recycling collection will be Friday Sep 14.', $binCollection->getText());
+        $this->assertEquals('Your next Weekly recycling collection will be Friday 14th September.', $binCollection->getText());
         $this->assertEquals('2018-09-14', $binCollection->getDate()->format('Y-m-d'));
     }
 

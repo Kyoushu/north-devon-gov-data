@@ -35,6 +35,16 @@ abstract class AbstractHtmlScraper implements ScraperInterface
         );
     }
 
+    public static function normalizeDateText($text, \DateTimeInterface $now = null): string
+    {
+        $regex = self::createDateRegex();
+        return preg_replace_callback($regex, function(array $match) use ($now){
+           $date = self::extractDate($match[0], $now);
+           if(!$date === null) return $match[0];
+           return $date->format('l jS F');
+        }, $text);
+    }
+
     /**
      * @param string $text
      * @return \DateTimeInterface|null
